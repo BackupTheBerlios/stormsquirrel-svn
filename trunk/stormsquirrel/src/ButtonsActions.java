@@ -5,8 +5,7 @@ class GetMailBL implements ActionListener
     GetMailButtonMenu menu = new GetMailButtonMenu();
     public void actionPerformed(ActionEvent e)
     {
-	menu.add("Dupa");
-	menu.setVisible(true);
+	System.out.println("Change mbox");    
     }
 }
 
@@ -14,7 +13,7 @@ class NewMessageBL implements ActionListener
 {
     public void actionPerformed(ActionEvent e)
     {
-	System.out.println("Edytor Tekstu");
+	System.out.println("Text Editor");
     }
 }
 
@@ -22,7 +21,7 @@ class AddressBookBL implements ActionListener
 {
     public void actionPerformed(ActionEvent e)
     {
-	System.out.println("Ksiazka adresowa");
+	System.out.println("Address Book");
     }
 }
 
@@ -30,7 +29,7 @@ class SynchronizeMailBoxesBL implements ActionListener
 {
     public void actionPerformed(ActionEvent e)
     {
-	System.out.println("Synchronizacja skrzynek");
+	System.out.println("Synchronize");
     }
 }
 

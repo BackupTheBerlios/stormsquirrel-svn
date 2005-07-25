@@ -2,4 +2,4 @@
 
 ant clean
 ant
-java -jar dist/StormSquirrel*.jar
+java -jar dist/stormsquirrel*.jar

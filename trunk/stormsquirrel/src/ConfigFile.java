@@ -10,6 +10,7 @@ class ConfigFile
 
     ConfigFile()
     {
+	this.createFile();
 	System.out.println("Reading config file...");
 	this.readFile();
     }
@@ -19,7 +20,7 @@ class ConfigFile
 	
 	try
 	    {
-		BufferedReader configFile = new BufferedReader(new FileReader("/home/marcus/.StormSquirrel/config.conf"));
+		BufferedReader configFile = new BufferedReader(new FileReader(usersHome + "/.stormsquirrel/config.conf"));
 		String temp;		
 		
 		temp = configFile.readLine();
@@ -56,5 +57,15 @@ class ConfigFile
     {
 	ConfigFile configFile = new ConfigFile();
 	return configFile.mailFilesList;
+    }
+
+    void createFile()
+    {
+	File configFile = new File(usersHome + "/.stormsquirrel/config.conf");
+	if (!configFile.exists())
+	    {
+		System.err.println("YOU DON'T HAVE THE CONFIG FILE!\nPLEASE READ README FILE.");
+		System.exit(1);
+	    }
     }
 }
