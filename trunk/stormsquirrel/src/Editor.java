@@ -23,7 +23,7 @@ public class Editor extends JFrame
 	header = message.substring(0, message.indexOf("X-UID:"));
 	body = message.substring(message.indexOf("\n", message.indexOf("X-UID:")), message.length());
 
-	return body;
+	return message; //Change when massage split is done!!!
     }
 }
 
