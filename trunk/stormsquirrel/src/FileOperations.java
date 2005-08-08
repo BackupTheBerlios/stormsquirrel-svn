@@ -23,6 +23,13 @@ class MailBoxFile
     void readFile(String fileName)
     {
 	
+	File tryMailFile = new File(fileName);
+	if (!tryMailFile.exists())
+	    {
+		System.err.println("MAIL FILE SPECIFIED IN CONFIG FILE DOES NOT EXIST! CHECK YOUR CONFIGURATION!");
+		System.exit(1);
+	    }
+	    
 	try
 	    {
 		BufferedReader mailFile = new BufferedReader(new FileReader(fileName));
