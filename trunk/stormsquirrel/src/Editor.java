@@ -17,11 +17,14 @@ public class Editor extends JFrame
 
     String splitMessage(String message, int part)
     {
+	
+	/*		
 	String header;
 	String body;
 
 	header = message.substring(0, message.indexOf("X-UID:"));
 	body = message.substring(message.indexOf("\n", message.indexOf("X-UID:")), message.length());
+	*/
 
 	return message; //Change when massage split is done!!!
     }
