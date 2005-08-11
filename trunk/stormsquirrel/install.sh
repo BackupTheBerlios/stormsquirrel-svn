@@ -4,7 +4,7 @@ DESTDIR="/"
 PROGRAMDIR="stormsquirrel"
 EXECUTABLEDIR=$DESTDIR"usr/local/bin"
 INSTALLDIR=$DESTDIR"usr/local/lib/$PROGRAMDIR"
-STROMSQUIRREL_CLASSPATH=$INSTALLDIR"/stormsquirrel.jar"
+STORMSQUIRREL_CLASSPATH=$INSTALLDIR"/stormsquirrel.jar"
 ANSWER="NO"
 ANSWEREXEC="NO"
 
@@ -86,7 +86,7 @@ fi
 
 touch $EXECUTABLEDIR/stormsquirrel
 echo "#!/bin/sh" > $EXECUTABLEDIR/stormsquirrel
-echo "java -cp $CLASSPATH:"$STORMSQUIRREL_CLASSPATH" -jar "$INSTALLDIR"/stormsquirrel.jar" >> $EXECUTABLEDIR/stormsquirrel
+echo "java -cp "$STORMSQUIRREL_CLASSPATH" -jar "$INSTALLDIR"/stormsquirrel.jar" >> $EXECUTABLEDIR/stormsquirrel
 chmod +x $EXECUTABLEDIR/stormsquirrel
 
 echo "If you have not seen any errors, than Storm Squirrel should work. Thanks for trying Storm Squirrel."
