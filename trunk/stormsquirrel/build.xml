@@ -9,7 +9,7 @@
 
   <target name="init">
     <!-- Create the time stamp -->
-    <tstamp/>
+    <!-- <tstamp/> -->
     <!-- Create the build directory structure used by compile -->
     <mkdir dir="${build}"/>
   </target>
@@ -29,7 +29,7 @@
     <mkdir dir="${dist}"/>
 
     <!-- Put everything in ${build} into the stormsquirrel-${DSTAMP}.jar file -->
-    <jar manifest="${src}/MANIFEST.MF" jarfile="${dist}/stormsquirrel-${DSTAMP}.jar" basedir="${build}"/>
+    <jar manifest="${src}/MANIFEST.MF" jarfile="${dist}/stormsquirrel.jar" basedir="${build}"/>
     <copy file="${src}/Install.sh" todir="${dist}"/>
   </target>
 
