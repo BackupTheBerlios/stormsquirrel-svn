@@ -1,5 +1,0 @@
-#!/bin/sh
-
-ant clean
-ant
-java -jar dist/stormsquirrel*.jar
