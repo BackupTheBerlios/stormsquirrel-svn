@@ -91,4 +91,3 @@ chmod +x $EXECUTABLEDIR/stormsquirrel
 
 echo "If you have not seen any errors, than Storm Squirrel should work. Thanks for trying Storm Squirrel."
 echo
-
