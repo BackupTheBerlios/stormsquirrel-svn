@@ -4,8 +4,8 @@ TODAY=$(date +%Y%m%d)
 ANSWER="NO"
 ANSWER2="NO"
 
-#ant clean
-#ant
+ant clean
+ant
 
 if [ -d "./.Temp" ]; then
 
@@ -62,8 +62,8 @@ else
 	echo -n "Enter your developer.berlios.de login > "
 	read BERLIOS_USER
 
-	scp -v ./snapshots/stormsquirrel-$TODAY.tar.bz2 $BERLIOS_USER@shell.berlios.de:/home/groups/ftp/stormsquirrel/stormsquirrel-$TODAY.tar.bz2
-	scp -v ./snapshots/stormsquirrel-$TODAY.tar.bz2 $BERLIOS_USER@shell.berlios.de:/home/groups/ftp/stormsquirrel/stormsquirrel-snap-latest.tar.bz2
+	scp ./snapshots/stormsquirrel-$TODAY.tar.bz2 $BERLIOS_USER@shell.berlios.de:/home/groups/ftp/pub/stormsquirrel/stormsquirrel-$TODAY.tar.bz2
+	scp ./snapshots/stormsquirrel-$TODAY.tar.bz2 $BERLIOS_USER@shell.berlios.de:/home/groups/ftp/pub/stormsquirrel/stormsquirrel-snap-latest.tar.bz2
 
     fi 
 fi
