@@ -1,6 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 
+interface WhichPart
+{
+
+    int HEADER = 0, BODY = 1;
+
+}
+
 public class Editor extends JFrame
 {
     Editor(String messageText)
@@ -11,8 +18,10 @@ public class Editor extends JFrame
 
 	setSize(640,600);
 	setVisible(true);
-	this.setLayout(new GridLayout(1, 4, 0, 1));
-	this.add(new JTextArea(splitMessage(messageText, 1)));
+	this.setLayout(new GridLayout(1, 2, 0, 1));
+
+	//adds JScrollPane with message content (this way cause scrolling is needed)
+	this.add(new MessageViewport(splitMessage(messageText, 1)));
     }
 
     String splitMessage(String message, int part)
@@ -30,9 +39,12 @@ public class Editor extends JFrame
     }
 }
 
-interface WhichPart
+class MessageViewport extends JScrollPane
 {
-
-    int HEADER = 0, BODY = 1;
-
+    MessageViewport(String messageText)
+    {
+	//adds Text area with message to JScrollPanel to support scrolling
+	this.setViewportView(new JTextArea(messageText));
+    }
 }
+

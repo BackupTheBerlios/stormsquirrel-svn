@@ -5,7 +5,15 @@ class GetMailBL implements ActionListener
     GetMailButtonMenu menu = new GetMailButtonMenu();
     public void actionPerformed(ActionEvent e)
     {
-	System.out.println("Change mbox");    
+	System.out.println("Get Mail");    
+    }
+}
+
+class ChangeFileBL implements ActionListener
+{
+    public void actionPerformed(ActionEvent e)
+    {
+	System.out.println("Changing MBox File");
     }
 }
 
@@ -33,7 +41,13 @@ class SynchronizeMailBoxesBL implements ActionListener
     }
 }
 
-
+class ConfigureBL implements ActionListener
+{
+    public void actionPerformed(ActionEvent e)
+    {
+	System.out.println("Configuration dialog.");
+    }
+}
 
 class ExitBL implements ActionListener
 {
