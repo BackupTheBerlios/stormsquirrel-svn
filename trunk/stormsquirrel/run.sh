@@ -20,7 +20,7 @@
 
 #!/bin/sh
 
-STORMSQUIRREL_CLASSPATH="dist/stormsquirrel.jar"
+STORMSQUIRREL_CLASSPATH="dist/stormsquirrel.jar:/usr/share/java/activation.jar:/usr/share/java/gnu-crypto.jar:/gnumail-providers.jar:/usr/share/java/gnumail.jar:/usr/share/java/inetlib.jar:/usr/share/java/javax-crypto.jar:/usr/share/java/javax-net.jar:/usr/share/java/javax-security-cert.jar:/usr/share/java/javax-security.jar:/usr/share/java/org-metastatic-jessie.jar"
 
 ant clean
 ant

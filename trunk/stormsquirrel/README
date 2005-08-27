@@ -15,7 +15,7 @@ And... those buttons on the top... they don't work yet.
 
 TO INSTALL FROM SNAPSHOT - just run Install.sh script and it will do the rest :-)
 
-TO COMPILE FROM SOURCES- if you have apache-ant installed just run ant or use run script. If not
-you have to compile every file separatly: javac gui.java ...
+TO COMPILE FROM SOURCES- if you have apache-ant and jikes compiler installed just run ant or use run script. If not
+you have to compile every file separatly. 
 
 TO COMPILE FROM SOURCES AND INSTALL - run install.sh and it will do the rest :-)
