@@ -19,51 +19,59 @@
  ***************************************************************************/
 
 import javax.swing.*;
+import javax.swing.border.*;
 import java.awt.*;
 
-interface WhichPart
-{
-
-    int HEADER = 0, BODY = 1;
-
-}
 
 public class Editor extends JFrame
 {
     Editor(String messageText)
     {
 	super("-- Message --");
-
 	System.out.println("Loading message editor...");
 
+	getContentPane().add(new TopBox(), BorderLayout.NORTH);
+	getContentPane().add(new MessageViewport(messageText));
 	setSize(640,600);
 	setVisible(true);
-	this.setLayout(new GridLayout(1, 2, 0, 1));
-
-	//adds JScrollPane with message content (this way cause scrolling is needed)
-	this.add(new MessageViewport(splitMessage(messageText, 1)));
-    }
-
-    String splitMessage(String message, int part)
-    {
-	
-	/*		
-	String header;
-	String body;
-
-	header = message.substring(0, message.indexOf("X-UID:"));
-	body = message.substring(message.indexOf("\n", message.indexOf("X-UID:")), message.length());
-	*/
-
-	return message; //Change when massage split is done!!!
     }
 }
+
+class TopBox extends Box
+{
+    TopBox()
+    {
+	super(BoxLayout.Y_AXIS);
+
+	//adds top JTextFields with mail sender...
+	this.add(new TopArea());
+    }
+}
+
 
 class MessageViewport extends JScrollPane
 {
     MessageViewport(String messageText)
     {
 	//adds Text area with message to JScrollPanel to support scrolling
-	this.setViewportView(new JTextArea(messageText));
+	JTextPane messagePart = new JTextPane();
+	messagePart.setText(messageText);
+	this.setBorder(new BevelBorder(BevelBorder.LOWERED));
+	this.setViewportView(messagePart);
     }
 }
+
+
+class TopArea extends JPanel
+{
+
+    TopArea()
+    {
+	this.setLayout(new GridLayout(4,1,0,1));
+	this.add(new JTextField(" - From - "));
+	this.add(new JTextField(" - To - "));
+	this.add(new JTextField(" - Date - "));
+	this.add(new JTextField(" - Subject - "));
+    }
+}
+
