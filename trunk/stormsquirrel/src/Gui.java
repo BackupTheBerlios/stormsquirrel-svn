@@ -103,7 +103,7 @@ class MainButtons extends JPanel
 
 
 //****************//
-//Top Menu related classes
+//Top menu related classes
 
 
 class TopMenu extends JMenuBar
@@ -171,9 +171,8 @@ class InboxPanel extends JScrollPane
 	    };
 	
 	messagesList.addMouseListener(mouseListener1);
-	
-    }
-    
+    }        
+
 	    
     void addElementsToList()
     {
@@ -196,7 +195,7 @@ class BottomTabbedPane extends JTabbedPane
 	this.add("Outbox", new InboxPanel());
 	this.add("Draft", new InboxPanel());
 	this.add("Saved", new InboxPanel());
-	this.add("MY", new InboxPanel());
+	this.add("Junk", new InboxPanel());
 	this.add("Trash", new InboxPanel());
     }
 }

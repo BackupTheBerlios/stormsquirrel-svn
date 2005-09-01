@@ -29,22 +29,24 @@ public class Editor extends JFrame
     {
 	super("-- Message --");
 	System.out.println("Loading message editor...");
-
-	getContentPane().add(new TopBox(), BorderLayout.NORTH);
+ 	getContentPane().add(new TopBox(messageText), BorderLayout.NORTH);
 	getContentPane().add(new MessageViewport(messageText));
 	setSize(640,600);
 	setVisible(true);
-    }
+    }   
 }
 
 class TopBox extends Box
 {
-    TopBox()
+    //adds top labels with header info and little free space between it and message
+    TopBox(String messageText)
     {
 	super(BoxLayout.Y_AXIS);
-
+	//adds editor's top menu
+	this.add(new EditorTopMenu());
 	//adds top JTextFields with mail sender...
-	this.add(new TopArea());
+	this.add(new TopLabels("from", "date", "subject"));
+	this.add(Box.createVerticalStrut(2));
     }
 }
 
@@ -62,16 +64,75 @@ class MessageViewport extends JScrollPane
 }
 
 
-class TopArea extends JPanel
+//****************//
+//Top labels related classes
+
+
+class TopLabels extends Box
 {
 
-    TopArea()
+/*
+This class creates a Box (container with box layout) and adds 
+labels and text fields to it.
+*/
+
+    TopLabels(String from, String date, String subject)
     {
-	this.setLayout(new GridLayout(4,1,0,1));
-	this.add(new JTextField(" - From - "));
-	this.add(new JTextField(" - To - "));
-	this.add(new JTextField(" - Date - "));
-	this.add(new JTextField(" - Subject - "));
+	super(BoxLayout.Y_AXIS);
+	//Creates new Box and adds TopLabel;free space;TopLabel...
+	Box fromAndDateLine = new Box(BoxLayout.X_AXIS);
+	fromAndDateLine.add(Box.createHorizontalStrut(13));
+	fromAndDateLine.add(new TopLabel("From:", from));
+	fromAndDateLine.add(Box.createHorizontalStrut(3));
+	fromAndDateLine.add(new TopLabel("Date:", date));
+
+	Box subjectLine = new Box(BoxLayout.X_AXIS);
+	subjectLine.add(new TopLabel("Subject:", subject));
+
+	this.add(fromAndDateLine);
+	this.add(subjectLine);
     }
 }
 
+class TopLabel extends Box
+{
+//Creates a line with label, free space and text box 
+
+    TopLabel(String label, String text)
+    {
+	super(BoxLayout.X_AXIS);
+	this.add(new JLabel(label));
+	this.add(Box.createHorizontalStrut(4));
+	this.add(new JTextField(text));
+    }
+}
+
+
+//****************//
+//Top menu related classes
+
+
+class EditorTopMenu extends JMenuBar
+{
+    //Menu and submenu items declarations
+
+    private JMenuBar topMenuBar = new JMenuBar();
+    private JMenu[] topMenus = {new JMenu("File"), new JMenu("Edit"), new JMenu("Help")};
+    private JMenuItem[] fileMenuItems = {new JMenuItem("Save File")};
+    
+    EditorTopMenu()
+    {
+	//Adding Submenus//
+	for (int i = 0; i < topMenus.length; i++)
+	    {
+	  this.add(topMenus[i]);
+	    }
+	
+	for (int i =0; i < fileMenuItems.length; i++)
+	    {
+		topMenus[0].add(fileMenuItems[i]);
+	    }
+
+	this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+    }
+}
