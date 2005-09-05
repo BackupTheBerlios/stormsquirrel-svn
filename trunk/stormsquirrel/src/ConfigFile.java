@@ -28,13 +28,15 @@ class ConfigFile
     String usersHome = System.getenv("HOME");
     File fileWithConfig = new File(usersHome + "/.stormsquirrel/config.conf");
     File configDir = new File (usersHome + "/.stormsquirrel");
-
+    File mboxDir = new File (usersHome + "/.stormsquirrel/MailBoxes");
 
     ConfigFile()
     {
 	this.checkForFile();
 	this.readFile();
 	System.out.println("Reading config file...");
+	//TEMPORARY - CHANGE THAT
+	new CreateMailBox(mboxDir+"/inbox.mbox");
     }
 
     void readFile()
@@ -51,9 +53,9 @@ class ConfigFile
 		    {
 			while (temp !=null)
 			    {
-				if (temp.startsWith("mailFile="))
+				if (temp.startsWith("inbox="))
 				    {
-					temp = temp.substring(9);
+					temp = temp.substring(6); //CHANGE TO RELATIVE VALUE
 					mailFilesList.add(temp);
 				    }
 				else
@@ -92,13 +94,9 @@ class ConfigFile
 		    {
 			configDir.mkdir();
 			System.out.println("Creating Config directory.");
-			this.createConfigFile();
 		    }
-		
-		else
-		    {
-			this.createConfigFile();
-		    }
+			
+		this.createConfigFile();
 	    }
     }
     
@@ -106,16 +104,20 @@ class ConfigFile
     void createConfigFile()
     {
 	//Opens config file for writing and writes mailboxFile=.stormsquirrel/personal.mbox
-	try{
+	try
+	    {
 	    PrintWriter configFileWriter = new PrintWriter(new BufferedWriter(new FileWriter(fileWithConfig)));
 
-	    configFileWriter.print("mailFile="+configDir+"/personal.mbox");
+	    configFileWriter.print("inbox="+mboxDir+"/inbox.mbox");
 
 	    configFileWriter.close();
-	}
+
+	    }
 	catch (IOException ex)
 	    {
 		System.err.println("An IOException in createConfigFile");
 	    }
     }
+    
 }
+
