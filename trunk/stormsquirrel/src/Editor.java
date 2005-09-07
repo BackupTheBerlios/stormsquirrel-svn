@@ -57,6 +57,7 @@ class MessageViewport extends JScrollPane
     {
 	//adds Text area with message to JScrollPanel to support scrolling
 	JTextPane messagePart = new JTextPane();
+	messagePart.setEditable(false);
 	messagePart.setText(messageText);
 	this.setBorder(new BevelBorder(BevelBorder.LOWERED));
 	this.setViewportView(messagePart);
@@ -101,7 +102,7 @@ class TopLabel extends Box
     TopLabel(String label, String text)
     {
 	super(BoxLayout.X_AXIS);
-	this.add(new JLabel(label));
+      	this.add(new JLabel(label));
 	this.add(Box.createHorizontalStrut(4));
 	this.add(new JTextField(text));
     }

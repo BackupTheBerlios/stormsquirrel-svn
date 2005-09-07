@@ -131,8 +131,8 @@ class TopMenu extends JMenuBar
 
 	//Adding Action listeners for File Menu//
 
-	fileMenuItems[1].addActionListener(exitBL);
-	fileMenuItems[1].addActionListener(exitBL);
+	fileMenuItems[2].addActionListener(exitBL);
+	fileMenuItems[2].addActionListener(exitBL);
 
 
 	this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));

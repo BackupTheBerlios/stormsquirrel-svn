@@ -47,9 +47,11 @@ class NewMessageBL implements ActionListener
 
 class AddressBookBL implements ActionListener
 {
+    public static AddressBookGui addressBook = new AddressBookGui();
+
     public void actionPerformed(ActionEvent e)
     {
-	System.out.println("Address Book");
+	addressBook.setVisible(true);
     }
 }
 
