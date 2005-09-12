@@ -31,6 +31,7 @@ public class Editor extends JFrame
 	System.out.println("Loading message editor...");
  	getContentPane().add(new TopBox(messageText), BorderLayout.NORTH);
 	getContentPane().add(new MessageViewport(messageText));
+	getContentPane().add(new BottomButtonsPanel(), BorderLayout.SOUTH);
 	setSize(640,600);
 	setVisible(true);
     }   
@@ -135,5 +136,24 @@ class EditorTopMenu extends JMenuBar
 	    }
 
 	this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+    }
+}
+
+//****************//
+//Bottom buttons related classes
+
+class BottomButtonsPanel extends JPanel
+{
+    BottomButton removeMailButton = new BottomButton("Remove", "Remove message.", new ImageIcon(getClass().getResource("img/getmail-icon.png")));
+    BottomButton replyMailButton = new BottomButton("Reply", "Reply to sender.", new ImageIcon(getClass().getResource("img/getmail-icon.png")));
+    BottomButton replyAllMailButton = new BottomButton("Reply to all", "Reply to all.", new ImageIcon(getClass().getResource("img/getmail-icon.png")));
+
+
+    BottomButtonsPanel()
+    {
+	this.setLayout(new GridLayout(1,4,1,0));
+	this.add(removeMailButton);
+	this.add(replyMailButton);
+	this.add(replyAllMailButton);
     }
 }

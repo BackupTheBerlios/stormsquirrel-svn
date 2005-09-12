@@ -85,7 +85,7 @@ if [ -f "$INSTALLDIR/LICENSE" ]; then
 fi
 
 echo "Copying stormsquirrel.jar to INSTALLDIR"
-cp dist/stormsquirrel.jar $INSTALLDIR/stormsquirrel.jar
+cp stormsquirrel.jar $INSTALLDIR/stormsquirrel.jar
 cp README $INSTALLDIR/README
 cp LICENSE $INSTALLDIR/LICENSE
 
