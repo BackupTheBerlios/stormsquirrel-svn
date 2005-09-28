@@ -1,21 +1,73 @@
+===========================
+Storm Squirrel README file:
+===========================
+
+=====
+INDEX
+=====
+
+	0. Some important stuff.
+	1. About Strom Squirrel
+	2. Requirements
+	3. Installation
+
+=======================
+0. SOME IMPORTANT STUFF
+=======================
+
 Thanks for reading this file.
+
+From now on config file and example mbox file will be created ( $HOME/.stormsquirrel/config.conf
+and $HOME/.stormsquirrel/MailBoxes/inbox.mbox)
+
+Please USE A COPY OF YOUR MBOX FILE! Storm Squirrel is a beggining project
+and it can destroy your mail! (From now on it WRITES TO DISK, and there is 
+NO LOCKING MECHANISM, so it REALY CAN DESTROY your mail.)
+
+And... those buttons on the top, and bottom... they don't work yet.
+
+=======================
+1. ABOUT STORM SQUIRREL
+=======================
+
+Thanks for trying Strom Squirrel.
+
+Storm Squirrel is a java based e-mail client working on a standard UNIX mbox files.
+What means you can use it along with other mailing software, on the same mail boxes.
+Our intention is to make it a lightweight and easy to use mail client with some nice
+features (like synchronization between hosts in your local network).
+
+Please remember that it is still in pre-Alpha software. So just be carefull :-)
+
+We hope you will like it.
+
+Storm Squirrel is licensed under GNU General Public License version 2.
+If this means nothing to you please read LICENSE file, which should be packed
+up with this software.
+
+===============
+2. REQUIREMENTS
+===============
 
 What you need to test Storm Squirrel pre-Alpha version:
 
 Sun's Java JRE 1.5.0 also known as 5.0;
-A config file  config.conf(like the example) in your home directory in .StormSquirrel subdirectory;
 System $HOME variable set to your home directory;
-An mbox file with mails :-);
 
-Please USE A COPY OF YOUR MBOX FILE! Storm Squirrel is a beggining project
-and it can destroy your mail! (but for now it's quite safe. It only reads. Writing
-is not yet supported :-)
-
-And... those buttons on the top... they don't work yet.
+===============
+3. INSTALLATION
+===============
 
 TO INSTALL FROM SNAPSHOT - just run Install.sh script and it will do the rest :-)
 
-TO COMPILE FROM SOURCES- if you have apache-ant and jikes compiler installed just run ant or use run script. If not
-you have to compile every file separatly. 
+TO COMPILE FROM SOURCES- if you have apache-ant and jikes compiler installed
+just run ant or use run script. If not, you have to compile every file separatly
+(but Ant can realy make it a lot easier).
 
-TO COMPILE FROM SOURCES AND INSTALL - run install.sh and it will do the rest :-)
+If you want to use another compiler (for example Sun's javac), you have to change a
+compiler="jikes" to compiler="javac" in
+<javac compiler="jikes" srcdir="${src}" destdir="${build}"/>
+For other compilers please read Ant's documentation.
+
+TO COMPILE FROM SOURCES AND INSTALL - run install.sh from main sources dir
+and it will do the rest :-) (You have to be root to do it).

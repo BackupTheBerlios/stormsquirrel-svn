@@ -103,13 +103,12 @@ class ConfigFile
     
     void createConfigFile()
     {
-	//Opens config file for writing and writes mailboxFile=.stormsquirrel/personal.mbox
+	//Opens config file for writing and writes mailboxFile.
 	try
 	    {
 	    PrintWriter configFileWriter = new PrintWriter(new BufferedWriter(new FileWriter(fileWithConfig)));
 
 	    configFileWriter.print("inbox="+mboxDir+"/inbox.mbox");
-
 	    configFileWriter.close();
 
 	    }

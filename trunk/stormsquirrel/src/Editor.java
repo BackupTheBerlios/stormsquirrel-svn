@@ -144,9 +144,9 @@ class EditorTopMenu extends JMenuBar
 
 class BottomButtonsPanel extends JPanel
 {
-    BottomButton removeMailButton = new BottomButton("Remove", "Remove message.", new ImageIcon(getClass().getResource("img/getmail-icon.png")));
-    BottomButton replyMailButton = new BottomButton("Reply", "Reply to sender.", new ImageIcon(getClass().getResource("img/getmail-icon.png")));
-    BottomButton replyAllMailButton = new BottomButton("Reply to all", "Reply to all.", new ImageIcon(getClass().getResource("img/getmail-icon.png")));
+    BottomButton removeMailButton = new BottomButton("Remove", "Remove message.");
+    BottomButton replyMailButton = new BottomButton("Reply", "Reply to sender.");
+    BottomButton replyAllMailButton = new BottomButton("Reply to all", "Reply to all.");
 
 
     BottomButtonsPanel()

@@ -12,20 +12,24 @@ public class CreateMailBox
     String usersHome = System.getenv("HOME");
     File mboxDir = new File (usersHome + "/.stormsquirrel/MailBoxes");
     
+    
     CreateMailBox(String name)
     {
 	if (!mboxDir.isDirectory())
 	    {
 		mboxDir.mkdir();
 	    }
-
-	this.createFile(name);
+	
+	if ((!(new File(name)).exists()))
+	    {
+		this.createFile(name);
+	    }
     }
     
     
     void createFile(String name)
     {
-	File newMBoxFile = new File (usersHome + "/.stormsquirrel/MailBoxes/" + name);
+	File newMBoxFile = new File(usersHome + "/.stormsquirrel/MailBoxes/" + name);
 	
 	if (!newMBoxFile.exists())
 	    {
