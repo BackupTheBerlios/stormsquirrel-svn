@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-Created-By: 1.5.0_01 (Sun Microsystems Inc.)
+Created-By: Marek Piechut: mco (at) o2 (dot) pl
 Main-Class: StormSquirrel
 

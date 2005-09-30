@@ -17,7 +17,7 @@
   <target name="compile" depends="init"
         description="compile the source " >
     <!-- Compile the java code from ${src} into ${build} -->
-    <javac compiler="jikes" srcdir="${src}" destdir="${build}"/>
+    <javac compiler="jikes" nowarn="true" srcdir="${src}" destdir="${build}"/>
     <copy todir="${build}/img">
 	<fileset dir="${src}/img"/>
     </copy>

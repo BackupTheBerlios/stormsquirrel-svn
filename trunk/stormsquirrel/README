@@ -64,8 +64,8 @@ TO COMPILE FROM SOURCES- if you have apache-ant and jikes compiler installed
 just run ant or use run script. If not, you have to compile every file separatly
 (but Ant can realy make it a lot easier).
 
-If you want to use another compiler (for example Sun's javac), you have to change a
-compiler="jikes" to compiler="javac" in
+If you want to use another compiler (for example Sun's javac), you have to remove
+compiler="jikes" in
 <javac compiler="jikes" srcdir="${src}" destdir="${build}"/>
 For other compilers please read Ant's documentation.
 

@@ -18,7 +18,9 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
+
 import java.awt.event.*;
+
 
 class GetMailBL implements ActionListener
 {
@@ -47,11 +49,15 @@ class NewMessageBL implements ActionListener
 
 class AddressBookBL implements ActionListener
 {
-//    public static AddressBookGui addressBook = new AddressBookGui();
+    static boolean isCreated = false;
 
     public void actionPerformed(ActionEvent e)
     {
-//	addressBook.setVisible(true);
+	if (AddressBookBL.isCreated == false)
+	    {
+		AddressBookGui addressBook = new AddressBookGui();
+		AddressBookBL.isCreated = true;
+	    }
     }
 }
 
